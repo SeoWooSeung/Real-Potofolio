@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mockupSlide = new Swiper(".mockup", {
     effect: "cube", // 큐브 효과 사용
-    speed: 1500,
+    speed: 1200,
     cubeEffect: {
       slideShadows: false, // 슬라이더를 돌릴때 흐릿해 지는 그림자 표시 여부
       shadow: true, // 슬라이더 밑의 그림자 표시 여부
@@ -14,9 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function mainIntroTimeline() {
-    // const speed = 1;
-    // const scrllo = document.querySelector(".mainIntro").offsetWidth * speed;
-    // document.querySelector(".mainIntro").style.height = `calc(${scrllo})`;
     const tl = gsap.timeline({
       delay: 3,
       scrollTrigger: {
@@ -86,8 +83,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mu.forEach((itm, idx) => {
       tl.from(itm, {
-        //x: 5,
-        // autoAlpha: 1,
         scrollTrigger: {
           trigger: itm,
           pin: true,
@@ -96,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
           end: "+=600 center",
           // markers: true,
           toggleClass: { targets: itm, className: "on" },
-          //onComplete: () => console.log(idx),
         },
         onUpdate: () => mockupSlide.slideToLoop(idx),
       });
@@ -107,29 +101,8 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0,
       scrollTrigger: {
         trigger: ".mainProfile",
-        //pin: true,
         scrub: 1,
-        //onComplete: () => console.log(idx),
       },
     });
-
-    // gsap.fromTo(
-    //   ".circle",
-    //   {
-    //     width: "0",
-    //     height: "0",
-    //     duration: "1",
-    //     ease: "elastic",
-    //     top: "50%",
-    //     left: "50%",
-    //   },
-    //   {
-    //     width: "2500px",
-    //     height: "2500px",
-    //     duration: "10",
-    //     top: "-50%",
-    //     left: "50%",
-    //   }
-    // );
   }
 });
