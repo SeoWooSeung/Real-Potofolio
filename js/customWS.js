@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   mainIntroTimeline();
   mainProfileTimeline();
+  TrainingTimeline();
 
   const mockupSlide = new Swiper(".mockup", {
     effect: "cube", // 큐브 효과 사용
-    speed: 1200,
+    speed: 1500,
     cubeEffect: {
       slideShadows: false, // 슬라이더를 돌릴때 흐릿해 지는 그림자 표시 여부
       shadow: true, // 슬라이더 밑의 그림자 표시 여부
@@ -27,11 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
 
-    tl.from(".mainIntro .itm .tit:nth-of-type(1) h2", {
-      x: 300,
+    tl.to(".welcome_txt", {
       autoAlpha: 0,
-      duration: 2,
     })
+      .from(".mainIntro .itm .tit:nth-of-type(1) h2", {
+        x: 300,
+        autoAlpha: 0,
+        duration: 2,
+      })
       .from(".mainIntro .itm .tit:nth-of-type(1) p", {
         x: 300,
         duration: 2,
@@ -83,14 +87,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     mu.forEach((itm, idx) => {
       tl.from(itm, {
+        //x: 5,
+        // autoAlpha: 1,
         scrollTrigger: {
           trigger: itm,
           pin: true,
           scrub: 1,
           start: "200px center",
-          end: "+=600 center",
+          end: "+=1600 center",
           // markers: true,
           toggleClass: { targets: itm, className: "on" },
+          //onComplete: () => console.log(idx),
         },
         onUpdate: () => mockupSlide.slideToLoop(idx),
       });
@@ -101,8 +108,32 @@ document.addEventListener("DOMContentLoaded", () => {
       scale: 0,
       scrollTrigger: {
         trigger: ".mainProfile",
+        //pin: true,
         scrub: 1,
+        //onComplete: () => console.log(idx),
       },
+    });
+  }
+
+  function TrainingTimeline() {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".Training",
+        pin: true,
+        anticipatePin: true,
+        scrub: 1,
+        start: "top top",
+        end: "+=3000",
+        markers: true,
+      },
+    });
+
+    tl.from(".Training .Training_box figure", {
+      y: 500,
+      duration: 1,
+      rotation: 0,
+      scrub: 1,
+      autoAlpha: 0,
     });
   }
 });

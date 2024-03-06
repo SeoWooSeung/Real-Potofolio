@@ -7,6 +7,68 @@
     background: rgba(0, 0, 0, 0.9);
 }
 
+
+
+.welcome_txt {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-transform: uppercase;
+}
+
+.welcome_txt strong {
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: 100;
+}
+
+.welcome_txt .wheel {
+
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 12px;
+
+    color: var(--white-color);
+}
+
+.welcome_txt .wheel::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 1px;
+    height: 80px;
+    background: var(--white-color);
+}
+
+.welcome_txt .wheel::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 4px;
+    height: 4px;
+    background: var(--white-color);
+    animation: wheel 0.5s infinite;
+}
+
+
+@keyframes wheel {
+    0% {
+        transform: translate(-50%, 0);
+    }
+
+    100% {
+        transform: translate(-50%, 80px);
+    }
+}
+
 .mmovie {
     position: fixed;
     inset: 0 0 0 0;
