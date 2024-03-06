@@ -4,10 +4,8 @@
 
 #content {
     position: relative;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.86);
 }
-
-
 
 .welcome_txt {
     position: absolute;
@@ -25,9 +23,8 @@
 }
 
 .welcome_txt .wheel {
-
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     left: 50%;
     transform: translate(-50%, 0);
     font-size: 12px;
@@ -38,34 +35,74 @@
 .welcome_txt .wheel::before {
     content: '';
     position: absolute;
-    top: 24px;
+    top: 40px;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 1px;
-    height: 80px;
+    /* width: 1px;
+    height: 120px; */
     background: var(--white-color);
 }
 
 .welcome_txt .wheel::after {
     content: '';
     position: absolute;
-    top: 24px;
+    top: 0;
     left: 50%;
     transform: translate(-50%, 0);
     width: 4px;
     height: 4px;
     background: var(--white-color);
-    animation: wheel 0.5s infinite;
+    animation: wheel 3s infinite;
 }
 
 
 @keyframes wheel {
     0% {
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 40px);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background:#fff;
     }
 
+    20% {
+        transform: translate(-50%, 600px);
+        width: 100px;
+        height: 500px;
+        border-radius: 50%;
+        background:#fff;
+    }
+    40% {
+        transform: translate(-50%, 50px);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background:#fff;
+    }
+
+    60% {
+        transform: translate(-50%, 400px);
+        width: 100px;
+        height: 5000px;
+        border-radius: 50%;
+        background:#fff;
+    }
+
+    80% {
+        transform: translate(-50%, 1000px);
+        width: 500px;
+        height: 1000px;
+        border-radius: 50%;
+        background:#fff;
+    }
+
+
     100% {
-        transform: translate(-50%, 80px);
+        transform: translate(-50%, 40px);
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background:#fff;
     }
 }
 
@@ -362,7 +399,7 @@ body {
 }
 
 .mainProfile .txtBox .txtItm .link a {
-    padding: 8px 24px;
+    padding: 12px 28px;
     border: 1px solid #ddd;
 
 
@@ -392,7 +429,11 @@ body {
     overflow: hidden;
 }
 
+/* *********************************************Training************************************************************** */
+
 .Training {
+    position: relative;
+
     border: 1px solid #ddd;
     padding: 80px 0;
 }
@@ -405,16 +446,23 @@ body {
 }
 
 .Training h2 {
-    font-size: 120px;
-    font-weight: 700;
+    font-size: 80px;
+    font-weight: 800;
     color: #fff;
 
     text-align: center;
-    margin: 180px 0 160px 0;
+    margin: 0 0 70px 0;
+/* 
+    transform: rotate(15deg); */
 }
 
 .Training .Training_box {
-    display: grid;
+/* position: absolute;
+top: 20%;
+left: 50%;
+transform: translate(-50%); */
+
+display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px 30px;
 }
@@ -422,6 +470,14 @@ body {
 .Training .Training_box>* {
     flex: 1;
 }
+
+/* .Training .Training_box figure:nth-child(even) {
+    transform: rotate(9deg);
+}
+
+.Training .Training_box figure:nth-child(odd) {
+    transform: rotate(-7deg);
+} */
 
 .Training .Training_box figure img {
     width: 350px;

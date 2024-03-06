@@ -34,48 +34,49 @@ document.addEventListener("DOMContentLoaded", () => {
       .from(".mainIntro .itm .tit:nth-of-type(1) h2", {
         x: 300,
         autoAlpha: 0,
-        duration: 2,
+        duration: 10,
       })
       .from(".mainIntro .itm .tit:nth-of-type(1) p", {
         x: 300,
-        duration: 2,
+        duration: 10,
         autoAlpha: 0,
       })
       .from(".mainIntro .st01", {
         y: -300,
         autoAlpha: 0,
-        duration: 3,
+        duration: 10,
         rotation: 360,
       })
       .from(".mainIntro .itm .tit:nth-of-type(2) h2", {
         x: 300,
         autoAlpha: 0,
-        duration: 2,
+        duration: 10,
       })
       .from(".mainIntro .itm .tit:nth-of-type(2) p", {
         x: 300,
         autoAlpha: 0,
-        duration: 2,
+        duration: 10,
       })
       .from(".mainIntro .itm .tit:nth-of-type(3) h2", {
         x: 300,
         autoAlpha: 0,
-        duration: 2,
+        duration: 10,
       })
       .from(".mainIntro .itm .tit:nth-of-type(3) h2 span", {
-        y: 300,
+        x: 2000,
         rotation: 360,
-        duration: 2,
+        duration: 15,
         scrub: 2,
       })
       .from(".mainIntro .itm .tit:nth-of-type(3) p", {
         x: 3000,
         autoAlpha: 0,
-        duration: 2,
+        duration: 10,
       })
       .to(".mainIntro", {
         rotation: 130,
         duration: 10,
+        delay:2,
         ease: "none",
       })
       .set({}, {}, "+=5");
@@ -122,18 +123,35 @@ document.addEventListener("DOMContentLoaded", () => {
         pin: true,
         anticipatePin: true,
         scrub: 1,
-        start: "top top",
+        start: "5% 10%",
         end: "+=3000",
         markers: true,
       },
-    });
-
-    tl.from(".Training .Training_box figure", {
-      y: 500,
-      duration: 1,
-      rotation: 0,
-      scrub: 1,
+    })
+    .from('.Training h2',{
+      y:300,
       autoAlpha: 0,
-    });
+      duration: 10,
+    })
+  .from(".Training .Training_box figure:nth-child(even)", {
+      y: 500,
+      x:1000,
+      duration: 10,
+      rotation: 180,
+      scrub: 1,
+      delay:0 ,
+      autoAlpha: 0,
+    })
+  .from(".Training .Training_box figure:nth-child(odd)", {
+      y: 500,
+      x:-1000,
+      duration: 10,
+      rotation: -180,
+      scrub: 1,
+      delay:0,
+      autoAlpha: 0,
+    })
   }
+
+
 });
