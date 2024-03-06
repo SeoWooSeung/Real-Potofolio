@@ -123,34 +123,53 @@ document.addEventListener("DOMContentLoaded", () => {
         pin: true,
         anticipatePin: true,
         scrub: 1,
-        start: "5% 10%",
+        start: "top top",
         end: "+=3000",
         markers: true,
       },
     })
-    .from('.Training h2',{
-      y:300,
-      autoAlpha: 0,
-      duration: 10,
-    })
-  .from(".Training .Training_box figure:nth-child(even)", {
-      y: 500,
-      x:1000,
-      duration: 10,
-      rotation: 180,
+    // .to('.Training span',{
+    //   autoAlpha: 0,
+    //   duration: 10,
+    // })
+
+  .from(".Training span:nth-child(even)", {
+      y: -500,
+      x:-2000,
+      duration: 1,
       scrub: 1,
       delay:0 ,
-      autoAlpha: 0,
     })
-  .from(".Training .Training_box figure:nth-child(odd)", {
-      y: 500,
-      x:-1000,
-      duration: 10,
-      rotation: -180,
+
+  .from(".Training span:nth-child(odd)", {
+      y:-1000,
+      x:2000,
+      duration: 1,
       scrub: 1,
       delay:0,
-      autoAlpha: 0,
     })
+
+  // .from(".Training span:nth-child(1)", {
+  //     y:500,
+  //     x:2000,
+  //     duration: 1,
+  //     scrub: 1,
+  //     delay:0,
+  //   })
+  // .from(".Training span:nth-child(3)", {
+  //     y:-2000,
+  //     x:2000,
+  //     duration: 1,
+  //     scrub: 1,
+  //     delay:0.2,
+  //   })
+  // .from(".Training span:nth-child(5)", {
+  //     y:-2000,
+  //     x:2000,
+  //     duration: 1,
+  //     scrub: 1,
+  //     delay:0.4,
+  //   })
   }
 
 
