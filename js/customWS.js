@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   mainIntroTimeline();
   mainProfileTimeline();
   TrainingTimeline();
+  MainTrainingTimeline();
+  TrainingListTimeline();
 
   const mockupSlide = new Swiper(".mockup", {
     effect: "cube", // 큐브 효과 사용
@@ -133,43 +135,133 @@ document.addEventListener("DOMContentLoaded", () => {
     //   duration: 10,
     // })
 
-  .from(".Training span:nth-child(even)", {
-      y: -500,
-      x:-2000,
+  .from(".Training span:nth-child(1)", {
+    y:-1000,
+    x:2000,
       duration: 1,
       scrub: 1,
       delay:0 ,
     })
 
-  .from(".Training span:nth-child(odd)", {
+  .from(".Training span:nth-child(2)", {
+    y:-500,
+    x:-2000,
+      duration: 1,
+      scrub: 1,
+      delay:0,
+    })
+  .from(".Training span:nth-child(3)", {
       y:-1000,
       x:2000,
       duration: 1,
       scrub: 1,
       delay:0,
     })
+  .from(".Training span:nth-child(4)", {
+    y:-500,
+    x:-2000,
+      duration: 1,
+      scrub: 1,
+      delay:0 ,
+    })
 
-  // .from(".Training span:nth-child(1)", {
-  //     y:500,
-  //     x:2000,
-  //     duration: 1,
-  //     scrub: 1,
-  //     delay:0,
-  //   })
-  // .from(".Training span:nth-child(3)", {
-  //     y:-2000,
-  //     x:2000,
-  //     duration: 1,
-  //     scrub: 1,
-  //     delay:0.2,
-  //   })
-  // .from(".Training span:nth-child(5)", {
-  //     y:-2000,
-  //     x:2000,
-  //     duration: 1,
-  //     scrub: 1,
-  //     delay:0.4,
-  //   })
+  .from(".Training span:nth-child(5)", {
+    y:-1000,
+    x:2000,
+      duration: 1,
+      scrub: 1,
+      delay:0,
+    })
+  .from(".Training span:nth-child(6)", {
+    y:-500,
+    x:-2000,
+      duration: 1,
+      scrub: 1,
+      delay:0,
+    })
+  }
+
+
+  function MainTrainingTimeline() {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".MainTraining",
+        pin: true,
+        anticipatePin: true,
+        scrub: 1,
+        start: "top top",
+        end: "+=3000",
+        markers: true,
+      },
+    })
+    .fromTo('.MainTraining .won',
+    {'width':'0', 'height':'0','duraton':'20', },
+    {'width':'2500', 'height':'2500', 'autoAlpha':'1', 'duraton':'20',})
+
+    .fromTo('.MainTraining h2',{autoAlpha:1, duration:10,
+      scrub:1,},
+      {
+      duration:10,
+      scrub:1,
+      autoAlpha:0,
+    },0)
+    
+  }
+
+  function TrainingListTimeline() {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".TrainingList",
+        pin: true,
+        anticipatePin: true,
+        scrub: 1,
+        start: "-20% top",
+        end: "+=5000",
+        markers: true,
+      },
+    })
+    .fromTo('.TrainingList h2',{
+      // y:-3000,
+      duration:10,
+      scrub:1,
+      autoAlpha:0,
+    },
+    {
+      autoAlpha:1,
+    })
+    .fromTo('.TrainingList .won',
+    {'width':'2500', 'height':'2500','duraton':'10',},
+    {'width':'1', 'height':'1','duraton':'10',})
+
+    .from('.TrainingList .inner .t_box ul li:nth-of-type(even)',{
+    x:1000,
+    scrub:1,
+    duration:20,
+    autoAlpha:0,
+    rotate:180,
+    })
+    .from('.TrainingList .inner .t_box ul li:nth-of-type(odd)',{
+    x:-1000,
+    scrub:1,
+    duration:20,
+    autoAlpha:0,
+    rotate:180,
+    })
+    .from('.TrainingList .inner .b_box ul li:nth-of-type(even)',{
+    x:1000,
+    scrub:1,
+    duration:20,
+    autoAlpha:0,
+    rotate:180,
+    })
+    .from('.TrainingList .inner .b_box ul li:nth-of-type(odd)',{
+    x:-1000,
+    scrub:1,
+    duration:20,
+    autoAlpha:0,
+    rotate:180,
+    })
+
   }
 
 

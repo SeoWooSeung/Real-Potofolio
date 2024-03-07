@@ -285,7 +285,7 @@ body {
     width: 1500px;
     height: 1500px;
 
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.48);
     /* backdrop-filter: blur(7px);
     -webkit-backdrop-filter: blur(7px); */
     border-radius: 50%;
@@ -310,6 +310,7 @@ body {
 }
 
 .mainProfile .txtBox .txtItm strong {
+    position: relative;
     display: block;
 
     font-size: 70px;
@@ -324,6 +325,27 @@ body {
     opacity: 0;
     transition: 0.5s 0.2s;
     transform: translate(0, 100px);
+}
+
+.mainProfile .txtBox .txtItm strong::before {
+    content: "responsive";
+    position: absolute;
+    top: -40%;
+    right: -100px;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 100px;
+    background: #cc5050;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: -1;
+
+    font-size: 14px;
+    font-weight: 300;
+display: flex;
+align-items: center;
+vertical-align: middle;
 }
 
 .mainProfile .txtBox .txtItm.on strong {
@@ -432,13 +454,13 @@ body {
 /* *********************************************Training************************************************************** */
 
 .Training {
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
 
     /* border: 1px solid #ddd; */
     padding: 80px 0;
 
-height: 130vh;
+    height: 130vh;
     /* background: #ddd; */
 }
 
@@ -455,15 +477,15 @@ height: 130vh;
 
     margin: 0 auto;
     border: 1px solid #000;
-    border-radius: 10px;
-    background: #ff0;
+    border-radius: 50px;
+    background: #000;
 
     font-size: 120px;
     font-weight: 600;
     line-height: 1.5;
 
-    -webkit-text-stroke:2px #fff;
-    color: #000;
+    /* -webkit-text-stroke:2px #fff; */
+    color: #fff;
 
     white-space: nowrap;
 
@@ -477,7 +499,8 @@ height: 130vh;
     transform: translate(-50%,-50%);
     transform: rotate(-25deg);
 
-    background: #f00;
+    background: #f9f9f9;
+    color: #000;
 
 }
 .Training span:nth-of-type(2)  {
@@ -499,7 +522,8 @@ height: 130vh;
     transform: rotate(-25deg);
     margin: 0 0 50px 0;
 
-    background: #f00;
+    background: #f9f9f9;
+    color: #000;
     z-index: 2;
 }
 .Training span:nth-of-type(4)  {
@@ -519,7 +543,8 @@ height: 130vh;
     transform: rotate(-25deg);
     margin: 0 0 50px 0;
 
-    background: #f00;
+    background: #f9f9f9;
+    color: #000;
 }
 .Training span:nth-of-type(6)  {
     position: absolute;
@@ -533,7 +558,8 @@ height: 130vh;
 
 /* ***************************************************** */
 
-.ddd {
+.MainTraining {
+    /* overflow: hidden; */
     position: relative;
 
     display: flex;
@@ -542,27 +568,107 @@ height: 130vh;
     text-align: center;
 
     height: 100vh;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
+
 }
 
-.ddd h2 {
-    font-size: 400px;
+.MainTraining h2 {
+    font-size: 300px;
+    font-weight: 800;
     color: #fff;
 
 }
 
-.ddd span {
+.MainTraining .won {
     display: block;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 
-    width: 500px;
-    height: 500px;
+    width: 1500px;
+    height: 1500px;
     border-radius: 50%;
-    background: rgba(0, 0, 0, 0.86);
+    background:#000 ;
+    /* background: url(../images/fireworks-8240032_1280.png)no-repeat center center/cover; */
+
 }
+
+
+/* -*************************TrainingList***************************** */
+
+.TrainingList {
+    padding: 80px 0;
+    /* overflow: hidden; */
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    text-align: center;
+
+    height: 100vh;
+}
+
+.TrainingList h2 {
+    font-size: 120px ;
+    font-weight: 800;
+    color: #fff;
+
+    margin: 0 0 80px 0;
+
+    text-transform: uppercase;
+}
+
+.TrainingList .won {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    width: 1500px;
+    height: 1500px;
+    border-radius: 50%;
+    background:#000 ;
+    /* background: url(../images/fireworks-8240032_1280.png)no-repeat center center/cover; */
+}
+
+.TrainingList .inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.TrainingList .inner img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+
+    margin: 0 0 16px 0;
+
+    border-radius: 24px;
+}
+
+.TrainingList .inner span {
+    display: block;
+    color: #fff;
+}
+
+.TrainingList .t_box ul{
+
+    display: flex;
+    gap: 30px 30px;
+
+    margin: 0 0 30px 0;
+}
+
+
+.TrainingList .b_box ul{
+    display: flex;
+    gap: 30px 30px;
+}
+
 
 
 
